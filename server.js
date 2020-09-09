@@ -1,5 +1,4 @@
 const express = require('express')
-const https = require('https')
 const http = require('http')
 const app = express()
 const fs = require('fs')
@@ -18,15 +17,7 @@ app.get('/', (req, res) => {
 // })
 
 const httpServer = http.createServer(app)
-const httpsServer = https.createServer({
-    key: fs.readFileSync('/etc/letsencrypt/live/orderday.asif.works/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/orderday.asif.works/fullchain.pem'),
-}, app)
 
-httpServer.listen(80, () => {
+httpServer.listen(3010, () => {
     console.log('HTTP Server running on port 80')
-})
-
-httpsServer.listen(443, () => {
-    console.log('HTTPS Server running on port 443')
 })
