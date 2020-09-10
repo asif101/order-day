@@ -24,10 +24,36 @@
     &>.intro-text-container {
         width: 50%;
         font-size: 2rem;
-        color: white;
+        color: #dddddd;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        &>.intro-text-input {
+            margin-top: 50px;
+            width: 500px;
+
+            & .intro-text-input {
+                color: #dddddd;
+                font-size: 1.5rem;
+            }
+
+            & .intro-submit-icon {
+                background-color: rgb(90, 90, 90);
+                width: 32px;
+                height: 32px;
+                border-radius: 3px;
+                pointer-events: none;
+                cursor: pointer;
+                transition: all 0.2s linear;
+
+                &.ready {
+                    background-color: #ff5d73;
+                    pointer-events: initial;
+                }
+            }
+        }
     }
 }
 
