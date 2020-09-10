@@ -1,0 +1,28 @@
+.Intro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>.intro-image-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+
+        &>.intro-image {
+            height: 60vmin;
+            pointer-events: none;
+        }
+    }
+
+    &>.intro-text-container {
+        width: 50%;
+        font-size: 2rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
