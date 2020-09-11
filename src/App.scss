@@ -3,3 +3,29 @@
   height: 100vh;
   background-color: #363636;
 }
+
+.CSSTransition-fade-enter {
+  opacity: 0;
+}
+
+.CSSTransition-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.CSSTransition-fade-enter-done {
+  opacity: 1;
+}
+
+.CSSTransition-fade-exit {
+  opacity: 1;
+}
+
+.CSSTransition-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.CSSTransition-fade-exit-done {
+  opacity: 0;
+}
