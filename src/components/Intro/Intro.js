@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import shawarma from '../../assets/images/shawarma.svg'
 import { OutlinedInput } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import { setName } from '../../store/actions/orderActions'
 import './Intro.scss'
 
-const Intro = () => {
+const Intro = ({ setName }) => {
 
-    const [name, setName] = useState('')
+    const [bufferName, setBufferName] = useState('')
 
     const handleSubmit = () => {
-        console.log(name)
+        console.log(bufferName)
+        setName(bufferName)
     }
 
     return (
@@ -26,17 +29,19 @@ const Intro = () => {
                     endAdornment={
                         <InputAdornment position="end">
                             <ArrowForwardIcon
-                                className={name === '' ? 'intro-submit-icon' : 'intro-submit-icon ready'}
+                                className={bufferName === '' ? 'intro-submit-icon' : 'intro-submit-icon ready'}
                                 onClick={handleSubmit}
                             />
                         </InputAdornment>}
-                    value={name}
-                    onChange={e => { setName(e.target.value) }}
-                    onKeyPress={e => { if (e.key === 'Enter' && name !== '') handleSubmit() }}
+                    value={bufferName}
+                    onChange={e => { setBufferName(e.target.value) }}
+                    onKeyPress={e => { if (e.key === 'Enter' && bufferName !== '') handleSubmit() }}
                 />
             </div>
         </div>
     )
 }
 
-export default Intro
+
+
+export default connect(null, { setName })(Intro)
