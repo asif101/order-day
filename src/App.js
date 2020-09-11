@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Intro from './components/Intro/Intro'
+import Main from './components/Main/Main'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import './App.scss'
 
@@ -8,7 +9,7 @@ const App = ({ name }) => {
 
   const getContent = () => {
     if (!name) return <Intro />
-    else return <div style={{ width: '100px', height: '100px', backgroundColor: 'red' }}> </div>
+    else return <Main />
   }
 
   return (

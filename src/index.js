@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { Provider } from 'react-redux'
 import store from './store/store'
 import './index.scss'
+import 'simplebar/dist/simplebar.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
