@@ -19,13 +19,13 @@ const People = () => {
 export default connect(null)(People)
 
 const people = [
-    'asif',
-    'asif',
-    'asif',
-    'asif',
-    'asif',
-    'asif',
-    'asif',
+    'Asif',
+    'Elizabeth',
+    'Jason',
+    'Alex',
+    'Ella',
+    'Gokul',
+    'Amber',
     'asif',
     'asif',
 ]
