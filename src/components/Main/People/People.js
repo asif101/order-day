@@ -9,7 +9,7 @@ const People = () => {
         <div className='People'>
             <SimpleBar style={{maxHeight: '100%'}}>
                 {people.map((x, i) => (
-                    <Person key={i} name={x} />
+                    <Person key={i} index={i} name={x} />
                 ))}
             </SimpleBar>
         </div>
