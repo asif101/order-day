@@ -35,3 +35,14 @@
         }
     }
 }
+
+
+@media only screen and (max-width: 450px) {
+    .Person-icon-container {
+        display: none;
+    }
+
+    .Person-text-container {
+        text-align: center;
+    }
+}

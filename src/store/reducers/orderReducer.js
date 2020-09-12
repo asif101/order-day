@@ -1,7 +1,7 @@
 import { SET_NAME } from '../actions/types'
 
 const initState = {
-    name: 'Maneki Neko', //null
+    name: null, //null
     people: [],
     items: [],
     tax: null,
