@@ -5,6 +5,7 @@ import { InputBase } from '@material-ui/core'
 // import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import { setName } from '../../store/actions/orderActions'
 import People from './People/People'
+import Items from './Items/Items'
 import './Main.scss'
 
 const Main = ({ order, setName }) => {
@@ -28,7 +29,7 @@ const Main = ({ order, setName }) => {
             </div>
             <div className='body'>
                 <People />
-        
+                <Items />
             </div>
         </div>
     )

@@ -7,9 +7,9 @@ import './People.scss'
 const People = () => {
     return (
         <div className='People'>
-            <SimpleBar style={{maxHeight: '100%'}}>
-                {people.map((x, i) => (
-                    <Person key={i} index={i} name={x} />
+            <SimpleBar style={{ maxHeight: '100%' }}>
+                {people.map(x => (
+                    <Person key={x.id} id={x.id} name={x.name} />
                 ))}
             </SimpleBar>
         </div>
@@ -19,13 +19,12 @@ const People = () => {
 export default connect(null)(People)
 
 const people = [
-    'Asif',
-    'Elizabeth',
-    'Jason',
-    'Alex',
-    'Ella',
-    'Gokul',
-    'Amber',
-    'asif',
-    'asif',
+    { id: 0, name: 'Asif' },
+    { id: 1, name: 'Elizabeth' },
+    { id: 2, name: 'Jason' },
+    { id: 3, name: 'Alex' },
+    { id: 4, name: 'Ella' },
+    { id: 5, name: 'Gokul' },
+    { id: 6, name: 'Amber' },
+    { id: 7, name: 'Asif' },
 ]

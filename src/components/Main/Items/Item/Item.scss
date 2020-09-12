@@ -1,0 +1,39 @@
+.Item {
+    padding: 5px 5px !important;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    &>.item-left-container {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+
+        &>svg {
+            fill: rgb(143, 143, 143);
+        }
+
+        &>.name {
+            margin-left: 5px;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &>.item-right-container {
+        display: flex;
+        align-items: center;
+
+        &>.item-group-container {
+            display: flex;
+            align-items: center;
+            margin-right: 8px;
+            color: rgb(143, 143, 143);
+
+            &>svg {
+                fill: rgb(143, 143, 143);
+                margin-bottom: 2px;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

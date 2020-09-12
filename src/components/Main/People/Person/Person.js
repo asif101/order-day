@@ -4,12 +4,12 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import Card from '@material-ui/core/Card'
 import './Person.scss'
 
-const Person = ({ index, name }) => {
+const Person = ({ id, name }) => {
     return (
         <Card className='Person' classes={{ root: 'Person' }}>
             <div className='Person-icon-container'>
                 <AccountCircleIcon
-                    // style={{ fill: colors[index % colors.length] }}
+                    // style={{ fill: colors[id % colors.length] }}
                 />
             </div>
             <div className='Person-text-container'>
@@ -23,9 +23,9 @@ const Person = ({ index, name }) => {
 
 export default connect(null)(Person)
 
-const colors = [
-    '#ffc100',
-    '#7192BE',
-    '#63B995',
-    '#FF5D73',
-]
+// const colors = [
+//     '#ffc100',
+//     '#7192BE',
+//     '#63B995',
+//     '#FF5D73',
+// ]
