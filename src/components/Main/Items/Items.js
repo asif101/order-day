@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Item from './Item/Item'
+import Totals from './Totals/Totals'
 import { Card } from '@material-ui/core'
 import List from '@material-ui/core/List'
 import SimpleBar from 'simplebar-react'
@@ -11,7 +12,7 @@ const Items = ({ order }) => {
         <div className='Items'>
             <SimpleBar style={{ maxHeight: '100%' }}>
                 <Card className='items-container'>
-                    <List>
+                    <List className='list'>
                         {order.items.map((x, i) => <Item
                             key={i}
                             data={x}
@@ -19,6 +20,7 @@ const Items = ({ order }) => {
                         />)}
                     </List>
                 </Card>
+                <Totals />
             </SimpleBar>
         </div>
     )

@@ -1,0 +1,56 @@
+.totals-container {
+    margin-top: 10px;
+    background-color: rgb(73, 73, 73) !important;
+    
+    &>.list {
+        padding: 0;
+    }
+
+    & .subtotal-container {
+        padding: 5px 5px !important;
+        display: flex;
+
+
+        &>.label {
+            flex-grow: 1;
+            color: white
+        }
+
+        &>.value {
+            text-align: right;
+            color: white
+        }
+    }
+
+    & .tax-tip-container {
+        padding: 5px 5px !important;
+        display: flex;
+
+
+        &>.label {
+            flex-grow: 1;
+            color: white
+        }
+
+        &>.value {
+            text-align: right;
+            color: white
+        }
+    }
+
+    & .total-container {
+        padding: 5px 5px !important;
+        display: flex;
+
+
+        &>.label {
+            flex-grow: 1;
+            color: white
+        }
+
+        &>.value {
+            text-align: right;
+            color: white
+        }
+    }
+}

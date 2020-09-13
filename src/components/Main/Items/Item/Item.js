@@ -3,11 +3,10 @@ import { connect } from 'react-redux'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt'
 import ListItem from '@material-ui/core/ListItem'
-// import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import './Item.scss'
 
-const Person = ({ data, last }) => {
+const Item = ({ data, last }) => {
 
     const makeGroup = () => {
         return (
@@ -35,4 +34,4 @@ const Person = ({ data, last }) => {
     )
 }
 
-export default connect(null)(Person)
+export default connect(null)(Item)

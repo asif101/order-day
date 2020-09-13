@@ -29,10 +29,10 @@ const initState = {
             owners: [2]
         },
     ],
-    tax: null,
-    tip: null,
-    subtotal: null,
-    total: null
+    tax: 0,
+    tip: 0,
+    subtotal: 12.46,
+    total: 0
 }
 
 
