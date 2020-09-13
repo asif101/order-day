@@ -1,7 +1,7 @@
 import { SET_NAME, ADD_ITEM, UPDATE_ITEM } from '../actions/types'
 
 const initState = {
-    name: 'Maneki Meko', //null
+    name: 'Maneki Neko', //null
     people: [
         { id: 0, name: 'Asif' },
         { id: 1, name: 'Elizabeth' },
