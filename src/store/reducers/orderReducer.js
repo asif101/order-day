@@ -1,4 +1,4 @@
-import { SET_NAME, ADD_ITEM } from '../actions/types'
+import { SET_NAME, ADD_ITEM, UPDATE_ITEM } from '../actions/types'
 
 const initState = {
     name: 'Maneki Meko', //null
@@ -38,6 +38,15 @@ export default (state = initState, action) => {
             return {
                 ...state,
                 items: [...state.items, action.item]
+            }
+        case UPDATE_ITEM:
+            const items = [...state.items]
+            let foundIndex = items.findIndex(x => x.id === action.item.id)
+            if(foundIndex) items[foundIndex] = action.item
+            else console.warn('Warning: Did not find item to update')
+            return {
+                ...state,
+                items: items
             }
         default:
             return state
