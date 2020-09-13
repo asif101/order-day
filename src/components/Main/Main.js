@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { InputBase } from '@material-ui/core'
-// import InputAdornment from '@material-ui/core/InputAdornment'
-// import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import { setName } from '../../store/actions/orderActions'
 import People from './People/People'
 import Items from './Items/Items'

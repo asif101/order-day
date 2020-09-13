@@ -7,15 +7,16 @@ import { Card } from '@material-ui/core'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import SimpleBar from 'simplebar-react'
-import {addItem} from '../../../store/actions/orderActions'
+import { addItem } from '../../../store/actions/orderActions'
 import './Items.scss'
 
-const Items = ({ items, addItem }) => {
+const Items = ({ items, selectedItemId, addItem }) => {
 
     const makeItems = () => {
         if (items.length > 0) return items.map((x, i) => <Item
             key={i}
             data={x}
+            selected={x.id === selectedItemId}
             last={i + 1 === items.length}
         />)
         else return <ListItem className='no-items-placeholder'><span>No Items</span></ListItem>
@@ -41,6 +42,9 @@ const Items = ({ items, addItem }) => {
     )
 }
 
-const mapStateToProps = ({ order }) => ({ items: order.items })
+const mapStateToProps = ({ order, appState }) => ({
+    items: order.items,
+    selectedItemId: appState.selectedItemId
+})
 
 export default connect(mapStateToProps, { addItem })(Items)

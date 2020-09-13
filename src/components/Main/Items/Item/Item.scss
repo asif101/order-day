@@ -4,19 +4,41 @@
     align-items: center;
     color: white;
 
+    &.selected {
+        background-color: rgb(110, 110, 110)
+    }
+
     &>.item-left-container {
         flex-grow: 1;
         display: flex;
         align-items: center;
 
         &>svg {
-            fill: rgb(143, 143, 143);
+            fill: #ffc100;
         }
 
         &>.name {
-            margin-left: 5px;
-            text-overflow: ellipsis;
+            margin: 0 5px;
+            flex-grow: 1;
+            color: white;
+
+            & fieldset {
+                border-width: 1px;
+            }
+
+            &.Mui-disabled {
+                & fieldset {
+                    border: none;
+                }
+            }
+
+            &>.MuiInputBase-input {
+                padding: 5px;
+                font-family: 'Varela Round';
+            }
         }
+
+
     }
 
     &>.item-right-container {
@@ -26,13 +48,44 @@
         &>.item-group-container {
             display: flex;
             align-items: center;
-            margin-right: 8px;
             color: rgb(143, 143, 143);
 
             &>svg {
                 fill: rgb(143, 143, 143);
                 margin-bottom: 2px;
                 font-size: 1.1rem;
+            }
+        }
+
+        &>.cost {
+            margin: 0 5px;
+            color: white;
+            padding-left: 5px;
+
+            &>.MuiInputAdornment-root {
+                margin: 0;
+
+                &>p {
+                    color: white;
+                    font-family: 'Varela Round';
+                }
+            }
+
+            & fieldset {
+                border-width: 1px;
+            }
+
+            &.Mui-disabled {
+                & fieldset {
+                    border: none;
+                }
+            }
+
+            &>.MuiInputBase-input {
+                padding: 5px;
+                width: 45px;
+                font-family: 'Varela Round';
+                text-align: right;
             }
         }
     }
