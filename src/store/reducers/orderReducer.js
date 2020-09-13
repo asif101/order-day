@@ -1,9 +1,34 @@
 import { SET_NAME } from '../actions/types'
 
 const initState = {
-    name: null, //null
-    people: [],
-    items: [],
+    name: 'Maneki Meko', //null
+    people: [
+        { id: 0, name: 'Asif' },
+        { id: 1, name: 'Elizabeth' },
+        { id: 2, name: 'Jason' },
+        { id: 3, name: 'Alex' },
+        { id: 4, name: 'Ella' },
+        { id: 5, name: 'Gokul' },
+        { id: 6, name: 'Amber' },
+        { id: 7, name: 'Asif' },
+    ],
+    items: [
+        {
+            name: 'Spicy Chili Burger with Extra Mayo',
+            cost: 12.46,
+            owners: [0, 1]
+        },
+        {
+            name: 'Udon',
+            cost: 16.46,
+            owners: [4]
+        },
+        {
+            name: 'Hot Dog',
+            cost: 12.46,
+            owners: [2]
+        },
+    ],
     tax: null,
     tip: null,
     subtotal: null,
