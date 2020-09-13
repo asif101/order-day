@@ -42,7 +42,7 @@ export default (state = initState, action) => {
         case UPDATE_ITEM:
             const items = [...state.items]
             let foundIndex = items.findIndex(x => x.id === action.item.id)
-            if(foundIndex) items[foundIndex] = action.item
+            if(foundIndex > -1) items[foundIndex] = action.item
             else console.warn('Warning: Did not find item to update')
             return {
                 ...state,
