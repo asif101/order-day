@@ -1,13 +1,24 @@
 .Items {
     width: 65%;
     padding: 10px 5px;
-}
 
-.items-container {
-    background-color: rgb(73, 73, 73) !important;
-    box-shadow: none !important;
+    & .items-container {
+        background-color: rgb(73, 73, 73) !important;
+        box-shadow: none !important;
 
-    &>.list {
-        padding: 0;
+        &>.list {
+            padding: 0;
+
+            &>.no-items-placeholder {
+                color: grey;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    & .add-item-button {
+        margin-top: 10px;
+        width: 100%;
     }
 }
