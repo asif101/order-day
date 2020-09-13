@@ -7,9 +7,10 @@ import { Card } from '@material-ui/core'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import SimpleBar from 'simplebar-react'
+import {addItem} from '../../../store/actions/orderActions'
 import './Items.scss'
 
-const Items = ({ items }) => {
+const Items = ({ items, addItem }) => {
 
     const makeItems = () => {
         if (items.length > 0) return items.map((x, i) => <Item
@@ -28,7 +29,12 @@ const Items = ({ items }) => {
                         {makeItems()}
                     </List>
                 </Card>
-                <Button className='add-item-button' color="primary" variant="contained">Add Item</Button>
+                <Button
+                    className='add-item-button'
+                    color="primary"
+                    variant="contained"
+                    onClick={addItem}
+                >Add Item</Button>
                 <Totals />
             </SimpleBar>
         </div>
@@ -37,4 +43,4 @@ const Items = ({ items }) => {
 
 const mapStateToProps = ({ order }) => ({ items: order.items })
 
-export default connect(mapStateToProps)(Items)
+export default connect(mapStateToProps, { addItem })(Items)
