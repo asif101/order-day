@@ -8,7 +8,6 @@ import './Totals.scss'
 
 const Totals = ({ order }) => {
 
-
     return (
         <Card className='totals-container'>
             <List className='list'>
@@ -17,9 +16,14 @@ const Totals = ({ order }) => {
                     <span className='value'>{'$' + order.subtotal}</span>
                 </ListItem>
                 <Divider />
-                <ListItem className='tax-tip-container'>
-                    <span className='label'>{'Subtotal:'}</span>
-                    <span className='value'>{'$' + order.subtotal}</span>
+                <ListItem className='tax-container'>
+                    <span className='label'>{'Tax:'}</span>
+                    <span className='value'>{'$' + order.tax}</span>
+                </ListItem>
+                <Divider />
+                <ListItem className='tip-container'>
+                    <span className='label'>{'Tip:'}</span>
+                    <span className='value'>{'$' + order.tip}</span>
                 </ListItem>
                 <Divider />
                 <ListItem className='total-container'>
@@ -28,7 +32,6 @@ const Totals = ({ order }) => {
                 </ListItem>
             </List>
         </Card>
-
     )
 }
 
