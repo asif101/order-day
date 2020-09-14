@@ -1,4 +1,5 @@
 import { SET_NAME, ADD_ITEM, UPDATE_ITEM } from '../actions/types'
+import { calculateSubTotal, calculateTotal } from '../../utils/orderUtils'
 
 const initState = {
     name: 'Maneki Neko', //null
@@ -23,7 +24,7 @@ const initState = {
     tax: 1.50,
     tip: 2,
     subtotal: 12.50,
-    total: 15
+    total: 16
 }
 
 
@@ -42,11 +43,15 @@ export default (state = initState, action) => {
         case UPDATE_ITEM:
             const items = [...state.items]
             let foundIndex = items.findIndex(x => x.id === action.item.id)
-            if(foundIndex > -1) items[foundIndex] = action.item
+            if (foundIndex > -1) items[foundIndex] = action.item
             else console.warn('Warning: Did not find item to update')
+            const newSubTotal = calculateSubTotal(items)
+            const newTotal = calculateTotal(newSubTotal, state.tax, state.tip)
             return {
                 ...state,
-                items: items
+                items: items,
+                subtotal: newSubTotal,
+                total: newTotal
             }
         default:
             return state
