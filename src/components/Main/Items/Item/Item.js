@@ -25,9 +25,18 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
         )
     }
 
+    const handleClickAway = e => {
+        if (selected) {
+            if (!e.target.closest('.People')) {
+                setCostBuffer(data.cost.toFixed(2))
+                selectItem(null)
+            }
+        }
+    }
+
     return (
         <>
-            <ClickAwayListener onClickAway={() => { if (selected) { selectItem(null); setCostBuffer(data.cost.toFixed(2)) } }}>
+            <ClickAwayListener onClickAway={handleClickAway}>
                 <ListItem className={selected ? 'Item selected' : 'Item'} onClick={() => { selectItem(data.id) }}>
                     <div className='item-left-container'>
                         <FastfoodIcon />

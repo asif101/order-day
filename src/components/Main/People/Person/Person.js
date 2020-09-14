@@ -4,28 +4,32 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import Card from '@material-ui/core/Card'
 import './Person.scss'
 
-const Person = ({ id, name }) => {
+const Person = ({ id, name, items, selectedItemId }) => {
+
+    const isOwnerOfSelectedItem = selectedItemId !== null ? items[selectedItemId].owners.includes(id) : false
+
+    const handleClick = e => {
+        if (selectedItemId !== null) {
+            console.log(selectedItemId)
+        }
+    }
+
     return (
-        <Card className='Person' classes={{ root: 'Person' }}>
+        <Card className={isOwnerOfSelectedItem ? 'Person owner' : 'Person'} onClick={handleClick}>
             <div className='Person-icon-container'>
-                <AccountCircleIcon
-                    // style={{ fill: colors[id % colors.length] }}
-                />
+                <AccountCircleIcon />
             </div>
             <div className='Person-text-container'>
                 <span className='name'>{name}</span>
                 <span className='money'>$0.00</span>
             </div>
-
         </Card>
     )
 }
 
-export default connect(null)(Person)
+const mapStateToProps = ({ order, appState }) => ({
+    items: order.items,
+    selectedItemId: appState.selectedItemId,
+})
 
-// const colors = [
-//     '#ffc100',
-//     '#7192BE',
-//     '#63B995',
-//     '#FF5D73',
-// ]
+export default connect(mapStateToProps)(Person)
