@@ -32,6 +32,7 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
                     <div className='item-left-container'>
                         <FastfoodIcon />
                         <OutlinedInput
+                            multiline
                             className='name'
                             disabled={!selected}
                             value={data.name}
