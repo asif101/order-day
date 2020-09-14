@@ -14,7 +14,7 @@ import './Item.scss'
 
 const Item = ({ data, selected, last, updateItem, selectItem }) => {
 
-    const [costBuffer, setCostBuffer] = useState(data.cost)
+    const [costBuffer, setCostBuffer] = useState(data.cost.toFixed(2))
 
     const makeGroup = () => {
         return (
@@ -27,7 +27,7 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
 
     return (
         <>
-            <ClickAwayListener onClickAway={() => { if (selected) selectItem(null) }}>
+            <ClickAwayListener onClickAway={() => { if (selected) { selectItem(null); setCostBuffer(data.cost) } }}>
                 <ListItem className={selected ? 'Item selected' : 'Item'} onClick={() => { selectItem(data.id) }}>
                     <div className='item-left-container'>
                         <FastfoodIcon />

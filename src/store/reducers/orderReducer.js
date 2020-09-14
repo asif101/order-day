@@ -16,14 +16,14 @@ const initState = {
         {
             id: 0,
             name: 'Spicy Chili Burger with Extra Mayo',
-            cost: 12.46,
+            cost: 12.50,
             owners: [0, 1]
         },
     ],
-    tax: 0,
-    tip: 0,
-    subtotal: 0,
-    total: 0
+    tax: 1.50,
+    tip: 2,
+    subtotal: 12.50,
+    total: 15
 }
 
 
