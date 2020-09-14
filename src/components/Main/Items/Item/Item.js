@@ -4,6 +4,7 @@ import { OutlinedInput } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt'
+import PersonIcon from '@material-ui/icons/Person'
 import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
@@ -16,11 +17,18 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
 
     const [costBuffer, setCostBuffer] = useState(data.cost.toFixed(2))
 
-    const makeGroup = () => {
-        return (
+    const renderOwners = () => {
+        if (data.owners.length === 1) return null
+        else if (data.owners.length > 1) return (
             <div className='item-group-container'>
                 <PeopleAltIcon />
                 <span>{data.owners.length}</span>
+            </div>
+        )
+        else if (data.owners.length < 1) return (
+            <div className='item-no-owner-container'>
+                <PersonIcon />
+                <span>?</span>
             </div>
         )
     }
@@ -51,7 +59,7 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
                         />
                     </div>
                     <div className='item-right-container'>
-                        {data.owners.length > 1 && makeGroup()}
+                        {renderOwners()}
                         <OutlinedInput
                             className='cost'
                             disabled={!selected}

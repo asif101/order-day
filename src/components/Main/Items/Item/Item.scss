@@ -58,6 +58,22 @@
             }
         }
 
+        &>.item-no-owner-container {
+            display: flex;
+            align-items: center;
+            color: rgb(143, 143, 143);
+
+            &>svg {
+                fill: #ff5d73;
+                font-size: 1.1rem;
+            }
+            &>span {
+                color: #ff5d73;
+            }
+        }
+
+
+
         &>.cost {
             margin: 0 5px;
             color: white;
