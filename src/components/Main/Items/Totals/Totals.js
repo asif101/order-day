@@ -12,7 +12,7 @@ const Totals = ({ order }) => {
         <Card className='totals-container'>
             <List className='list'>
                 <ListItem className='subtotal-container'>
-                    <span className='label'>{'SUBTOTAL:'}</span>
+                    <span className='label'>{'Subtotal:'}</span>
                     <span className='value'>{'$' + order.subtotal}</span>
                 </ListItem>
                 <Divider />
