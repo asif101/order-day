@@ -1,8 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import { isChrome } from '../utils/browserUtils'
 
-const middleware = []
+const middleware = [thunk]
 
  
 /* eslint-disable no-underscore-dangle */

@@ -13,22 +13,22 @@ const Totals = ({ order }) => {
             <List className='list'>
                 <ListItem className='subtotal-container'>
                     <span className='label'>{'Subtotal:'}</span>
-                    <span className='value'>{'$' + order.subtotal}</span>
+                    <span className='value'>{'$' + order.subtotal.toFixed(2)}</span>
                 </ListItem>
                 <Divider />
                 <ListItem className='tax-container'>
                     <span className='label'>{'Tax:'}</span>
-                    <span className='value'>{'$' + order.tax}</span>
+                    <span className='value'>{'$' + order.tax.toFixed(2)}</span>
                 </ListItem>
                 <Divider />
                 <ListItem className='tip-container'>
                     <span className='label'>{'Tip:'}</span>
-                    <span className='value'>{'$' + order.tip}</span>
+                    <span className='value'>{'$' + order.tip.toFixed(2)}</span>
                 </ListItem>
                 <Divider />
                 <ListItem className='total-container'>
                     <span className='label'>{'Total:'}</span>
-                    <span className='value'>{'$' + order.total}</span>
+                    <span className='value'>{'$' + order.total.toFixed(2)}</span>
                 </ListItem>
             </List>
         </Card>
