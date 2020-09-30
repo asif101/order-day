@@ -1,4 +1,4 @@
-import { SET_NAME, ADD_ITEM, UPDATE_ITEM } from '../actions/types'
+import { SET_NAME, ADD_ITEM, UPDATE_ITEM, UPDATE_TAX, UPDATE_TIP } from '../actions/types'
 import { calculateSubTotal, calculateTotal } from '../../utils/orderUtils'
 
 const initState = {
@@ -40,7 +40,7 @@ export default (state = initState, action) => {
                 ...state,
                 items: [...state.items, action.item]
             }
-        case UPDATE_ITEM:
+        case UPDATE_ITEM: {
             const items = [...state.items]
             let foundIndex = items.findIndex(x => x.id === action.item.id)
             if (foundIndex > -1) items[foundIndex] = action.item
@@ -53,6 +53,27 @@ export default (state = initState, action) => {
                 subtotal: newSubTotal,
                 total: newTotal
             }
+        }
+        case UPDATE_TAX: {
+            const newSubTotal = calculateSubTotal(state.items)
+            const newTotal = calculateTotal(newSubTotal, action.tax, state.tip)
+            return {
+                ...state,
+                tax: action.tax,
+                subtotal: newSubTotal,
+                total: newTotal
+            }
+        }
+        case UPDATE_TIP: {
+            const newSubTotal = calculateSubTotal(state.items)
+            const newTotal = calculateTotal(newSubTotal, state.tax, action.tip)
+            return {
+                ...state,
+                tip: action.tip,
+                subtotal: newSubTotal,
+                total: newTotal
+            }
+        }
         default:
             return state
     }
