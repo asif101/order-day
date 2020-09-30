@@ -8,6 +8,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { OutlinedInput } from '@material-ui/core'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import { isNumber } from '../../../../utils/assertUtils'
+import { measureTextWidth } from '../../../../utils/textUtils'
 import { updateTax, updateTip } from '../../../../store/actions/orderActions'
 
 
@@ -41,6 +42,7 @@ const Totals = ({ order, updateTax, updateTip }) => {
                         <span className='label'>{'Tax:'}</span>
                         <OutlinedInput
                             className='value'
+                            style={{ width: measureTextWidth(taxBuffer) + 'px' }}
                             disabled={selected !== 'tax'}
                             value={taxBuffer}
                             startAdornment={<InputAdornment position='start'>$</InputAdornment>}
@@ -59,6 +61,7 @@ const Totals = ({ order, updateTax, updateTip }) => {
                         <span className='label'>{'Tip:'}</span>
                         <OutlinedInput
                             className='value'
+                            style={{ width: measureTextWidth(tipBuffer) + 'px' }}
                             disabled={selected !== 'tip'}
                             value={tipBuffer}
                             startAdornment={<InputAdornment position='start'>$</InputAdornment>}

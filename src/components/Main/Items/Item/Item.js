@@ -11,6 +11,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import { updateItem } from '../../../../store/actions/orderActions'
 import { selectItem } from '../../../../store/actions/appStateActions'
 import { isNumber } from '../../../../utils/assertUtils'
+import { measureTextWidth } from '../../../../utils/textUtils'
 import './Item.scss'
 
 const Item = ({ data, selected, last, updateItem, selectItem }) => {
@@ -62,6 +63,7 @@ const Item = ({ data, selected, last, updateItem, selectItem }) => {
                         {renderOwners()}
                         <OutlinedInput
                             className='cost'
+                            style={{ width: measureTextWidth(costBuffer) + 'px' }}
                             disabled={!selected}
                             value={costBuffer}
                             startAdornment={<InputAdornment position='start'>$</InputAdornment>}
